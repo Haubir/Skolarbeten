@@ -1,0 +1,85 @@
+//package Calculator;
+import java.util.*;
+import java.io.IOException;
+
+public class Symbolic {
+
+    public static Sexpr add(Sexpr term1, Sexpr term2) {
+	if (term1.isConstant() && term2.isConstant())
+	    return new Constant(term1.getValue() + term2.getValue());
+	else
+	    return new Addition(term1, term2);
+    }
+    
+    public static Sexpr subtract(Sexpr term1, Sexpr term2) {
+	if (term1.isConstant() && term2.isConstant())
+	    return new Constant(term1.getValue() - term2.getValue());
+	else
+	    return new Subtraction(term1, term2);
+    }
+
+    public static Sexpr multiply(Sexpr factor1, Sexpr factor2) {
+	if (factor1.isConstant() && factor2.isConstant())
+	    return new Constant(factor1.getValue() * factor2.getValue());
+	else
+	    return new Multiplication(factor1, factor2);
+    }
+
+    public static Sexpr divide(Sexpr numerator, Sexpr denominator) {
+	if (numerator.isConstant() && denominator.isConstant())
+	    return new Constant(numerator.getValue() / denominator.getValue());
+	else 
+	    return new Division(numerator, denominator);
+    }
+
+    public static Sexpr sin(Sexpr argument) {
+	if (argument.isConstant())
+	    return new Constant(Math.sin(argument.getValue()));
+	else
+	    return new Sin(argument);
+    }
+
+    public static Sexpr cos(Sexpr argument){
+	if (argument.isConstant())
+	    return new Constant(Math.cos(argument.getValue()));
+	else
+	    return new Cos(argument);
+    }
+
+    public static Sexpr exp(Sexpr argument){
+	if (argument.isConstant())
+	    return new Constant(Math.exp(argument.getValue()));
+	else
+	    return new Exp(argument);
+    }
+    
+    public static Sexpr negate(Sexpr argument){
+	if (argument.isConstant())
+	    return new Constant(-(argument.getValue()));
+	else
+	    return new Negation(argument);
+    }
+
+    public static Sexpr log(Sexpr argument){
+	if (argument.isConstant())
+	    return new Constant(Math.log(argument.getValue()));
+	else
+	    return new Log(argument);
+    }
+
+    public static Sexpr assign(Sexpr left, Sexpr right, Map<String,Sexpr> vars) throws IOException {
+	if (right.isVars()){
+	    vars.put(right.getName(), left);
+	    return left;
+	}else{
+	    throw new SyntaxErrorException("Invalid assignment, expected variable"); 
+	}
+    }
+
+    public static Sexpr var(String identifier, Map<String,Sexpr> vars) {
+	if (vars.containsKey(identifier))
+	    return vars.get(identifier);
+	else
+	    return new Variable(identifier);
+    }
+}

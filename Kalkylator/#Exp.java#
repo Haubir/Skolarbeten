@@ -1,0 +1,17 @@
+//package Calculator;
+import java.util.*;
+
+public class Exp extends Unary {
+    
+    public Exp(Sexpr arg) {
+	super(arg);
+    }
+    
+    public String getName() {
+	return "Exp";
+    }
+    
+    public Sexpr eval(HashMap<String,Sexpr> vars) {
+	return Symbolic.exp(this.argument.eval(vars));
+    }	
+}

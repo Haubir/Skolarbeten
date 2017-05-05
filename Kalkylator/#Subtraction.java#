@@ -1,0 +1,21 @@
+//package Calculator;
+import java.util.*;
+
+public class Subtraction extends Binary {
+    
+    public Subtraction(Sexpr sum, Sexpr term) {
+	super(sum, term);
+    }
+
+    public String getName() {
+	return "-";
+    }
+
+    public int priority() {
+	return 1;
+    }
+            
+    public Sexpr eval(HashMap<String,Sexpr> vars){
+	return Symbolic.subtract(this.left.eval(vars), this.right.eval(vars));
+    }
+}

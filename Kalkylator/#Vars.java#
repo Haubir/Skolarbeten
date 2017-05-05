@@ -1,0 +1,14 @@
+//package Calculator;
+import java.util.*;
+public class Vars extends Command {
+
+    public String getName() {
+	return "vars";
+    }
+    
+    public Sexpr eval(HashMap<String, Sexpr> vars) {
+	System.out.println(vars);
+	return this;
+    }
+	
+}
