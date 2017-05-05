@@ -1,6 +1,6 @@
+
 import java.util.*;
 import java.io.*;
-
 public class Main {
   
   public static void main(String [] args) {
@@ -14,7 +14,7 @@ public class Main {
         e = p.statement();
         
         if (e != null) {
-          System.out.println("Inl√§st uttryck: " + e);  // F√∂r kontroll
+          System.out.println("InlÅ‰st uttryck: " + e);
           Sexpr result = e.eval(vars);
           System.out.println(result);
           

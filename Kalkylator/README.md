@@ -1,2 +1,3 @@
 # Kalkylator
-Inlupp5
+
+A command-line calculator

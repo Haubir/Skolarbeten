@@ -2,7 +2,6 @@
  * @since 23rd Jan 2016
  * @author Caspar Rossland Lindvall & Haubir Mariwani
  */
-//package calculator;
 
 /**
  * class Binary

@@ -14,7 +14,6 @@
  * @since 22th Jan 2016
  */
 
-//package Calculator;
 import java.util.*;
 import java.io.*;
 

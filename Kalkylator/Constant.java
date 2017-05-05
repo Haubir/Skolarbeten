@@ -2,7 +2,6 @@
  * @since 23rd Jan 2016
  * @author Caspar Rossland Lindvall & Haubir Mariwani
  */
-//package calculator;
 
 import java.util.*;
 
@@ -94,6 +93,7 @@ public class Constant extends Atom {
         return this;
     }
 
+    @Override
     public boolean equals(Object other) {
 	if(this.getClass().equals(other.getClass())) {
 	    Constant otherConst = (Constant) other;

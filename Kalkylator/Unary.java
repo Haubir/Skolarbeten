@@ -1,5 +1,3 @@
-//package Calculator;
-
 /**
  * Unary is an abstract class that handles all unary mathematical expressions.
  * A unary operation has a single argument, a sexpr. The different unary operations are

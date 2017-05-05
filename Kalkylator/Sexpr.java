@@ -1,11 +1,9 @@
-//package Calculator;
 import java.io.StreamTokenizer;
 import java.io.IOException;
-import java.util.*; //Collectuin<E> (Linked/Array List, TreeSet). Ska användas istället för sin egen. Ev. implements/extends.
-                   //Map<K,V> (HashMap) för variabeler.
+import java.util.*;
 
 
-public abstract class Sexpr{ // Parser struct new
+public abstract class Sexpr{
     public Sexpr() {
 
     }
@@ -43,11 +41,4 @@ public abstract class Sexpr{ // Parser struct new
     public static void main(String [] args) {
 	System.out.println("Inga errors!");
     }
-    /*
-    public boolean equals(Object other){
-
-	//isX?
-	return false;
-    }
-    */
 }

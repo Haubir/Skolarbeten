@@ -1,5 +1,5 @@
-//package Calculator;
 import java.util.*;
+
 public class Variable extends Atom {
     private String ident;
 
